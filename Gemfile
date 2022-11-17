@@ -1,10 +1,11 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.3"
+ruby "3.1.2"
 
 # Use specific branch of Rails
-gem "rails", github: "rails/rails", path: "/Users/byroot/src/github.com/Shopify/rails"
+gem "rails", github: "rails/rails"
+# gem "rails", github: "rails/rails", path: "/Users/byroot/src/github.com/Shopify/rails"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
