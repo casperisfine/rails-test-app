@@ -8,6 +8,9 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script type="text/javascript">
+      setInterval(function() { fetch(window.location.toString() + "?xhr=" + Math.random());}, 500);
+    </script>
   </head>
 
   <body>

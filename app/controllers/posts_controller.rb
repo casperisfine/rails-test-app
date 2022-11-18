@@ -9,11 +9,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
-  end
-
-  # GET /posts/1 or /posts/1.json
-  def show
+    p [:xhr?, params[:xhr]]
     p [:enum, :enter]
     Post.transaction do
      enum =  Enumerator.new do |yielder|
@@ -22,6 +18,12 @@ class PostsController < ApplicationController
      enum.next
     end
     p [:enum, :exit]
+
+    @posts = Post.all
+  end
+
+  # GET /posts/1 or /posts/1.json
+  def show
   end
 
   # GET /posts/new

@@ -7,6 +7,9 @@ class PostsTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit posts_url
+    p [:mysql_sleep]
+    Post.connection.execute("SELECT SLEEP(5)")
+    p [:mysql_sleep, :done]
     assert_selector "h1", text: "Posts"
   end
 
